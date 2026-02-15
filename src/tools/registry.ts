@@ -1,0 +1,258 @@
+import ForumIcon from '@mui/icons-material/Forum';
+import CasinoIcon from '@mui/icons-material/Casino';
+import ShuffleIcon from '@mui/icons-material/Shuffle';
+import PeopleIcon from '@mui/icons-material/People';
+import AutoFixHighIcon from '@mui/icons-material/AutoFixHigh';
+import ChatIcon from '@mui/icons-material/Chat';
+import TerminalIcon from '@mui/icons-material/Terminal';
+import FeedbackIcon from '@mui/icons-material/Feedback';
+import GraphicEqIcon from '@mui/icons-material/GraphicEq';
+import TableChartIcon from '@mui/icons-material/TableChart';
+import InputIcon from '@mui/icons-material/Input';
+import FolderOpenIcon from '@mui/icons-material/FolderOpen';
+import ScienceIcon from '@mui/icons-material/Science';
+import AnimationIcon from '@mui/icons-material/Animation';
+import DesignServicesIcon from '@mui/icons-material/DesignServices';
+import MenuBookIcon from '@mui/icons-material/MenuBook';
+import type { ToolManifest } from './manifest';
+
+export const toolRegistry: ToolManifest[] = [
+  {
+    id: 'stream',
+    title: 'Eternal Stream',
+    description: 'Watch NPCs chat in real-time. Pick characters, observe relationship-aware dialogue with typewriter effects.',
+    route: '/stream',
+    color: '#8b5cf6',
+    icon: ForumIcon,
+    component: () => import('../screens/StreamViewer').then((m) => ({ default: m.StreamViewer })),
+    category: 'game-engine',
+    tags: ['npc', 'dialogue', 'ambient'],
+    localOnly: false,
+    status: 'stable',
+    order: 0,
+  },
+  {
+    id: 'dice',
+    title: 'Dice Calculator',
+    description: 'RPG dice probability explorer. Input notation like 2d6+3, see probability curves, compare meteor types.',
+    route: '/dice',
+    color: '#3b82f6',
+    icon: CasinoIcon,
+    component: () => import('../screens/DiceCalculator').then((m) => ({ default: m.DiceCalculator })),
+    category: 'game-engine',
+    tags: ['dice', 'probability', 'rpg'],
+    localOnly: false,
+    status: 'stable',
+    order: 1,
+  },
+  {
+    id: 'rng',
+    title: 'Seeded RNG',
+    description: 'Deterministic random number playground. Enter a seed, see outputs, visualize distributions.',
+    route: '/rng',
+    color: '#10b981',
+    icon: ShuffleIcon,
+    component: () => import('../screens/RngPlayground').then((m) => ({ default: m.RngPlayground })),
+    category: 'game-engine',
+    tags: ['rng', 'seed', 'deterministic'],
+    localOnly: false,
+    status: 'stable',
+    order: 2,
+  },
+  {
+    id: 'npcs',
+    title: 'NPC Viewer',
+    description: 'Browse the pantheon: Mr. Bones, Xtreme, Dr. Voss, King James, Boots. See mood states and voice profiles.',
+    route: '/npcs',
+    color: '#f59e0b',
+    icon: PeopleIcon,
+    component: () => import('../screens/NpcViewer').then((m) => ({ default: m.NpcViewer })),
+    category: 'game-engine',
+    tags: ['npc', 'pantheon', 'personality'],
+    localOnly: false,
+    status: 'stable',
+    order: 3,
+  },
+  {
+    id: 'vectorize',
+    title: 'Vectorize',
+    description: 'Raster to vector conversion with 9 presets. Upload an image, pick a style, download SVG.',
+    route: '/vectorize',
+    color: '#ec4899',
+    icon: AutoFixHighIcon,
+    component: () => import('../screens/VectorizeTool').then((m) => ({ default: m.VectorizeTool })),
+    category: 'media',
+    tags: ['image', 'svg', 'vector'],
+    localOnly: false,
+    status: 'stable',
+    order: 4,
+  },
+  {
+    id: 'chat',
+    title: 'Chat Demo',
+    description: 'Talk to an NPC. Claude API-powered dialogue with Mr. Bones or Xtreme. Rate limited.',
+    route: '/chat',
+    color: '#ef4444',
+    icon: ChatIcon,
+    component: () => import('../screens/ChatDemo').then((m) => ({ default: m.ChatDemo })),
+    category: 'game-engine',
+    tags: ['npc', 'chat', 'ai'],
+    localOnly: false,
+    status: 'stable',
+    order: 5,
+  },
+  {
+    id: 'ffmpeg',
+    title: 'FFmpeg Cookbook',
+    description: 'Pick a recipe, configure options, copy a ready-to-paste ffmpeg command. 9 presets with batch mode.',
+    route: '/ffmpeg',
+    color: '#06b6d4',
+    icon: TerminalIcon,
+    component: () => import('../screens/FfmpegTool').then((m) => ({ default: m.FfmpegTool })),
+    category: 'media',
+    tags: ['ffmpeg', 'video', 'command'],
+    localOnly: true,
+    status: 'stable',
+    order: 6,
+  },
+  {
+    id: 'feedback',
+    title: 'Feedback Widget',
+    description: 'Local-only comment box. Leave feedback, export as JSON. Nothing leaves your browser.',
+    route: '/feedback',
+    color: '#a3a3a3',
+    icon: FeedbackIcon,
+    component: () => import('../screens/FeedbackWidget').then((m) => ({ default: m.FeedbackWidget })),
+    category: 'meta',
+    tags: ['feedback', 'local', 'comments'],
+    localOnly: true,
+    status: 'beta',
+    order: 7,
+  },
+  {
+    id: 'audio',
+    title: 'Audio Utility',
+    description: 'Generate ffmpeg audio commands: trim silence, normalize loudness, convert format, batch export.',
+    route: '/audio',
+    color: '#14b8a6',
+    icon: GraphicEqIcon,
+    component: () => import('../screens/AudioUtility').then((m) => ({ default: m.AudioUtility })),
+    category: 'media',
+    tags: ['audio', 'ffmpeg', 'loudness'],
+    localOnly: true,
+    status: 'beta',
+    order: 8,
+  },
+  {
+    id: 'loot',
+    title: 'Loot Tables',
+    description: 'Simulate loot table drops. See EV, variance, bad-streak probability, and seed-specific results.',
+    route: '/loot',
+    color: '#f97316',
+    icon: TableChartIcon,
+    component: () => import('../screens/LootTableExplorer').then((m) => ({ default: m.LootTableExplorer })),
+    category: 'game-engine',
+    tags: ['loot', 'probability', 'simulation'],
+    localOnly: false,
+    status: 'beta',
+    order: 9,
+  },
+  {
+    id: 'formatter',
+    title: 'Input Formatter',
+    description: 'Live input masking for phone, credit card, date, currency, SSN. Custom regex mode.',
+    route: '/formatter',
+    color: '#a855f7',
+    icon: InputIcon,
+    component: () => import('../screens/InputFormatter').then((m) => ({ default: m.InputFormatter })),
+    category: 'dev-utils',
+    tags: ['format', 'mask', 'input'],
+    localOnly: false,
+    status: 'beta',
+    order: 10,
+  },
+  {
+    id: 'assets',
+    title: 'Asset Checker',
+    description: 'Drop a folder or zip. Scan for naming issues, missing @2x, odd sizes, large files, duplicates.',
+    route: '/assets',
+    color: '#f43f5e',
+    icon: FolderOpenIcon,
+    component: () => import('../screens/AssetChecker').then((m) => ({ default: m.AssetChecker })),
+    category: 'dev-utils',
+    tags: ['assets', 'audit', 'naming'],
+    localOnly: true,
+    status: 'beta',
+    order: 11,
+  },
+  {
+    id: 'algorithms',
+    title: 'Algorithms',
+    description: 'Visualize sorting, searching, and probability algorithms step by step. See complexity analysis.',
+    route: '/algorithms',
+    color: '#22d3ee',
+    icon: ScienceIcon,
+    component: () => import('../screens/AlgorithmsPlayground').then((m) => ({ default: m.AlgorithmsPlayground })),
+    category: 'dev-utils',
+    tags: ['algorithm', 'sorting', 'visualization'],
+    localOnly: false,
+    status: 'beta',
+    order: 12,
+  },
+  {
+    id: 'motion',
+    title: 'Motion Sandbox',
+    description: 'Interactive animation demos: FLIP reorder, list transitions, grid shuffle. Copy React code.',
+    route: '/motion',
+    color: '#fb923c',
+    icon: AnimationIcon,
+    component: () => import('../screens/MotionSandbox').then((m) => ({ default: m.MotionSandbox })),
+    category: 'dev-utils',
+    tags: ['animation', 'css', 'motion'],
+    localOnly: false,
+    status: 'beta',
+    order: 13,
+  },
+  {
+    id: 'code-to-figma',
+    title: 'Code to Figma',
+    description: 'Paste HTML/React, preview live, copy as Figma layers. Powered by code.to.design.',
+    route: '/code-to-figma',
+    color: '#6366f1',
+    icon: DesignServicesIcon,
+    component: () => import('../screens/CodeToFigma').then((m) => ({ default: m.CodeToFigma })),
+    category: 'dev-utils',
+    tags: ['figma', 'html', 'design', 'export'],
+    localOnly: false,
+    status: 'beta',
+    order: 14,
+  },
+  {
+    id: 'wiki-builder',
+    title: 'Wiki Builder',
+    description: 'Reusable wiki-style layout components with TOC, infobox sidebar, breadcrumbs, and cross-linked navigation.',
+    route: '/wiki',
+    color: '#f59e0b',
+    icon: MenuBookIcon,
+    component: () => import('../screens/wiki/WikiHome').then((m) => ({ default: m.WikiHome })),
+    category: 'dev-utils',
+    tags: ['wiki', 'layout', 'components', 'documentation'],
+    localOnly: false,
+    status: 'stable',
+    order: 15,
+  },
+];
+
+export function getActiveTools(): ToolManifest[] {
+  return toolRegistry
+    .filter((t) => t.status !== 'coming-soon')
+    .sort((a, b) => a.order - b.order);
+}
+
+export function getAllTools(): ToolManifest[] {
+  return [...toolRegistry].sort((a, b) => a.order - b.order);
+}
+
+export function getTool(id: string): ToolManifest | undefined {
+  return toolRegistry.find((t) => t.id === id);
+}

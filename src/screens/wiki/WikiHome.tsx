@@ -93,7 +93,7 @@ export function WikiHome() {
               sx={{
                 display: 'block',
                 p: 1.5,
-                bgcolor: tokens.colors.background.base,
+                bgcolor: tokens.colors.background,
                 borderRadius: 1,
                 fontSize: '0.8rem',
                 fontFamily: 'IBM Plex Mono, monospace',

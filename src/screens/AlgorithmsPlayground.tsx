@@ -215,7 +215,7 @@ export function AlgorithmsPlayground() {
   const [comparing, setComparing] = useState<[number, number] | null>(null);
 
   const generatorRef = useRef<Generator<{ array: number[]; comparing: [number, number]; swapped: boolean }> | null>(null);
-  const timerRef = useRef<ReturnType<typeof setInterval>>();
+  const timerRef = useRef<ReturnType<typeof setInterval>>(undefined);
 
   const algo = ALGORITHMS.find((a) => a.id === selectedAlgo)!;
   const categoryAlgos = ALGORITHMS.filter((a) => a.category === category);

@@ -1,5 +1,5 @@
 import { useParams, Link } from 'react-router-dom';
-import { Box, Typography, Stack, Chip, Paper } from '@mui/material';
+import { Box, Typography, Stack, Paper } from '@mui/material';
 import { tokens } from '../../theme';
 import { wikiNpcs } from '../../data/wiki/npcs';
 import { WikiLayout, SectionAnchor, SectionHeader } from '../../components/wiki/WikiLayout';

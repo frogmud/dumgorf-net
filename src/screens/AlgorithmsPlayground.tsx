@@ -311,8 +311,8 @@ export function AlgorithmsPlayground() {
       {/* Visualization */}
       {category === 'sorting' && (
         <>
-          <Paper elevation={0} sx={{ p: 3, mb: 3, bgcolor: tokens.colors.paper }}>
-            <Box sx={{ display: 'flex', alignItems: 'flex-end', gap: '1px', height: 200 }}>
+          <Paper elevation={0} sx={{ p: 3, mb: 2, bgcolor: tokens.colors.paper }}>
+            <Box sx={{ display: 'flex', alignItems: 'flex-end', gap: '2px', height: 240 }}>
               {array.map((val, i) => (
                 <Box
                   key={i}
@@ -333,7 +333,7 @@ export function AlgorithmsPlayground() {
           </Paper>
 
           {/* Controls */}
-          <Stack direction="row" spacing={1} sx={{ mb: 3, alignItems: 'center' }}>
+          <Stack direction="row" spacing={1} sx={{ mb: 2, alignItems: 'center' }}>
             <Button
               variant="outlined"
               size="small"

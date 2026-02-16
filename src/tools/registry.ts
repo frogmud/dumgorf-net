@@ -1,36 +1,17 @@
-import ForumIcon from '@mui/icons-material/Forum';
 import CasinoIcon from '@mui/icons-material/Casino';
 import ShuffleIcon from '@mui/icons-material/Shuffle';
 import PeopleIcon from '@mui/icons-material/People';
 import AutoFixHighIcon from '@mui/icons-material/AutoFixHigh';
-import ChatIcon from '@mui/icons-material/Chat';
 import TerminalIcon from '@mui/icons-material/Terminal';
-import FeedbackIcon from '@mui/icons-material/Feedback';
 import GraphicEqIcon from '@mui/icons-material/GraphicEq';
 import TableChartIcon from '@mui/icons-material/TableChart';
 import InputIcon from '@mui/icons-material/Input';
 import FolderOpenIcon from '@mui/icons-material/FolderOpen';
 import ScienceIcon from '@mui/icons-material/Science';
 import AnimationIcon from '@mui/icons-material/Animation';
-import DesignServicesIcon from '@mui/icons-material/DesignServices';
-import MenuBookIcon from '@mui/icons-material/MenuBook';
 import type { ToolManifest } from './manifest';
 
 export const toolRegistry: ToolManifest[] = [
-  {
-    id: 'stream',
-    title: 'Eternal Stream',
-    description: 'Watch NPCs chat in real-time. Pick characters, observe relationship-aware dialogue with typewriter effects.',
-    route: '/stream',
-    color: '#8b5cf6',
-    icon: ForumIcon,
-    component: () => import('../screens/StreamViewer').then((m) => ({ default: m.StreamViewer })),
-    category: 'game-engine',
-    tags: ['npc', 'dialogue', 'ambient'],
-    localOnly: false,
-    status: 'stable',
-    order: 0,
-  },
   {
     id: 'dice',
     title: 'Dice Calculator',
@@ -88,20 +69,6 @@ export const toolRegistry: ToolManifest[] = [
     order: 4,
   },
   {
-    id: 'chat',
-    title: 'Chat Demo',
-    description: 'Talk to an NPC. Claude API-powered dialogue with Mr. Bones or Xtreme. Rate limited.',
-    route: '/chat',
-    color: '#ef4444',
-    icon: ChatIcon,
-    component: () => import('../screens/ChatDemo').then((m) => ({ default: m.ChatDemo })),
-    category: 'game-engine',
-    tags: ['npc', 'chat', 'ai'],
-    localOnly: false,
-    status: 'stable',
-    order: 5,
-  },
-  {
     id: 'ffmpeg',
     title: 'FFmpeg Cookbook',
     description: 'Pick a recipe, configure options, copy a ready-to-paste ffmpeg command. 9 presets with batch mode.',
@@ -114,20 +81,6 @@ export const toolRegistry: ToolManifest[] = [
     localOnly: true,
     status: 'stable',
     order: 6,
-  },
-  {
-    id: 'feedback',
-    title: 'Feedback Widget',
-    description: 'Local-only comment box. Leave feedback, export as JSON. Nothing leaves your browser.',
-    route: '/feedback',
-    color: '#a3a3a3',
-    icon: FeedbackIcon,
-    component: () => import('../screens/FeedbackWidget').then((m) => ({ default: m.FeedbackWidget })),
-    category: 'meta',
-    tags: ['feedback', 'local', 'comments'],
-    localOnly: true,
-    status: 'beta',
-    order: 7,
   },
   {
     id: 'audio',
@@ -212,34 +165,6 @@ export const toolRegistry: ToolManifest[] = [
     localOnly: false,
     status: 'beta',
     order: 13,
-  },
-  {
-    id: 'code-to-figma',
-    title: 'Code to Figma',
-    description: 'Paste HTML/React, preview live, copy as Figma layers. Powered by code.to.design.',
-    route: '/code-to-figma',
-    color: '#6366f1',
-    icon: DesignServicesIcon,
-    component: () => import('../screens/CodeToFigma').then((m) => ({ default: m.CodeToFigma })),
-    category: 'dev-utils',
-    tags: ['figma', 'html', 'design', 'export'],
-    localOnly: false,
-    status: 'beta',
-    order: 14,
-  },
-  {
-    id: 'wiki-builder',
-    title: 'Wiki Builder',
-    description: 'Reusable wiki-style layout components with TOC, infobox sidebar, breadcrumbs, and cross-linked navigation.',
-    route: '/wiki',
-    color: '#f59e0b',
-    icon: MenuBookIcon,
-    component: () => import('../screens/wiki/WikiHome').then((m) => ({ default: m.WikiHome })),
-    category: 'dev-utils',
-    tags: ['wiki', 'layout', 'components', 'documentation'],
-    localOnly: false,
-    status: 'stable',
-    order: 15,
   },
 ];
 

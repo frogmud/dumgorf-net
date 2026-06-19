@@ -1,6 +1,7 @@
 import React, { Suspense } from 'react';
 import { ThemeProvider, CssBaseline, Box, Typography, Link, CircularProgress } from '@mui/material';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 import { theme, tokens } from './theme';
 import { Header } from './components/Header';
 import { Home } from './screens/Home';
@@ -80,6 +81,7 @@ function App() {
           </Box>
           <SiteFooter />
         </Box>
+        <Analytics />
       </BrowserRouter>
     </ThemeProvider>
   );
